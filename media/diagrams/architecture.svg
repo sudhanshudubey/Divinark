@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="860" viewBox="0 0 1120 860" role="img" aria-labelledby="title desc">
+  <title id="title">Divinark AI component and evidence boundaries</title>
+  <desc id="desc">The terminal sends inference requests to the Hono API, which uses local Ollama or optional cloud providers. Permitted terminal tools report metadata to the API. PostgreSQL stores owned request, tool and investigation records. A bounded deterministic investigator reads those records and writes findings. The existing React CRT dashboard reads owned records through the API. File tools act on the project; shell commands use restricted Docker execution with no host writeback.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#84d9bb" stroke-width="1.4"/></marker>
+    <style>
+      text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .box { fill: #071b14; stroke: #34836a; stroke-width: 1.5; }
+      .head { fill: #adf0d6; font-size: 19px; font-weight: 700; }
+      .body { fill: #b7cfc4; font-size: 15px; }
+      .label { fill: #84d9bb; font-size: 13px; }
+      .line { fill: none; stroke: #84d9bb; stroke-width: 1.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1120" height="860" fill="#030d09"/>
+  <text x="36" y="46" class="head" letter-spacing="2">DIVINARK / COMPONENT BOUNDARIES</text>
+  <text x="36" y="74" class="body">Development architecture · explanatory diagram, not a product screenshot</text>
+  <rect x="36" y="118" width="312" height="132" class="box"/>
+  <text x="56" y="151" class="head">Terminal coding agent</text>
+  <text x="56" y="182" class="body">OpenTUI · PLAN / BUILD</text>
+  <text x="56" y="209" class="body">Model choice · session workflow</text>
+  <text x="56" y="234" class="label">Inference requests and tool reports</text>
+  <rect x="404" y="118" width="312" height="132" class="box"/>
+  <text x="424" y="151" class="head">Bun / Hono API</text>
+  <text x="424" y="182" class="body">Clerk · owned sessions</text>
+  <text x="424" y="209" class="body">Streaming · attempt lifecycle</text>
+  <text x="424" y="234" class="label">Persists events and queues checks</text>
+  <rect x="772" y="118" width="312" height="132" class="box"/>
+  <text x="792" y="151" class="head">Model providers</text>
+  <text x="792" y="182" class="body">Ollama: Qwen / optional K2</text>
+  <text x="792" y="209" class="body">Optional OpenAI / Anthropic</text>
+  <text x="792" y="234" class="label">Selected adapter · no paid fallback</text>
+  <path d="M348 184 H404" class="line"/>
+  <path d="M716 184 H772" class="line"/>
+  <rect x="36" y="322" width="312" height="184" class="box"/>
+  <text x="56" y="356" class="head">Tool execution</text>
+  <text x="56" y="387" class="body">File reads / searches</text>
+  <text x="56" y="414" class="body">BUILD: file writes / edits</text>
+  <text x="56" y="448" class="body">Shell: restricted Docker</text>
+  <text x="56" y="479" class="label">Explicit inputs · no shell writeback</text>
+  <path d="M192 250 V322" class="line"/>
+  <text x="203" y="289" class="label">Permitted tools</text>
+  <rect x="404" y="322" width="312" height="184" class="box"/>
+  <text x="424" y="356" class="head">PostgreSQL / Prisma</text>
+  <text x="424" y="387" class="body">Owned sessions</text>
+  <text x="424" y="414" class="body">Request and tool telemetry</text>
+  <text x="424" y="448" class="body">Pending jobs and findings</text>
+  <text x="424" y="479" class="label">Metadata evidence, bounded queries</text>
+  <path d="M560 250 V322" class="line"/>
+  <text x="572" y="289" class="label">Store / read</text>
+  <rect x="772" y="322" width="312" height="184" class="box"/>
+  <text x="792" y="356" class="head">Investigation worker</text>
+  <text x="792" y="387" class="body">Bounded metadata checks</text>
+  <text x="792" y="414" class="body">Findings with uncertainty</text>
+  <text x="792" y="448" class="body">No model calls or code replay</text>
+  <text x="792" y="479" class="label">Reads evidence · persists results</text>
+  <path d="M716 390 H772" class="line"/>
+  <path d="M772 456 H716" class="line"/>
+  <rect x="404" y="612" width="680" height="140" class="box"/>
+  <text x="424" y="647" class="head">Existing React CRT dashboard</text>
+  <text x="424" y="679" class="body">Recorded charts · attempts · evidence inspector · timeline</text>
+  <text x="424" y="709" class="body">Automatic refresh · Open · Investigate metadata recheck</text>
+  <text x="424" y="734" class="label">Reads owned records through the API; no direct database access</text>
+  <path d="M742 612 V282 H696 V250" class="line"/>
+  <text x="772" y="556" class="label">Authenticated API</text>
+  <path d="M36 792 H1084" fill="none" stroke="#34836a"/>
+  <text x="36" y="820" class="label">Request completion ≠ task correctness. A recorded finding ≠ an established root cause.</text>
+  <text x="36" y="844" class="label">Operational telemetry excludes raw prompts, source, tool arguments and command output.</text>
+</svg>

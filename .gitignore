@@ -1,0 +1,17 @@
+# Default-deny publication allowlist. Review each new path before allowing it.
+*
+!/.gitignore
+!/README.md
+!/RIGHTS.md
+!/docs/
+!/docs/overview.md
+!/docs/architecture.md
+!/docs/current-status.md
+!/docs/roadmap.md
+!/docs/public-updates.md
+!/demo/
+!/demo/README.md
+!/media/
+!/media/README.md
+!/media/diagrams/
+!/media/diagrams/architecture.svg
