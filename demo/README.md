@@ -2,6 +2,16 @@
 
 No executable demo, application source, model weights or hosted endpoint is included in this repository. The descriptions below summarize observed development behavior; they are not a substitute for a reproducible public benchmark.
 
+### Live Dashboard
+
+[Explore the Divinark Dashboard](https://sudhanshu-macbook-air.tailf378f9.ts.net/)
+
+> **Self-hosted prototype:** Divinark currently runs on my
+> MacBook Air. The dashboard is available only while my
+> local server is running. If it's offline, check out the
+> project demonstration and documentation below.
+
+
 ## Available observations
 
 **A supported execution finding.** An owner-supplied local dashboard capture shows a filesystem tool reporting a missing path. The investigator links that report to its request and presents it as an observable execution failure. It leaves the reason for the missing path and overall task correctness unresolved. This came from a smoke check, not a randomly sampled production incident.
